@@ -9,10 +9,6 @@ export default function validateData(values) {
     errors.lastname = "Lastname required";
   }
 
-  // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
-  //   errors.name = 'Enter a valid name';
-  // }
-
   if (!values.email) {
     errors.email = "Email required";
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
@@ -47,9 +43,7 @@ export default function validateData(values) {
       if (response) {
         localStorage.setItem("token", response.data.accessToken);
       }
-      console.log(response);
     });
-    console.log(userData);
   }
   return errors;
 }
